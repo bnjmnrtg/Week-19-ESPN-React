@@ -46,26 +46,22 @@
 
 	'use strict';
 
-	// Include the Main React Dependencies
+	// Dependencies
 	var React = __webpack_require__(1);
 	var ReactDOM = __webpack_require__(34);
 
-	// We need to include all of the components we're utilizing
-	// Include the Header Component
+	// Header Component
 	var Header = __webpack_require__(172);
-	var Saved = __webpack_require__(174);
-	var Search = __webpack_require__(173);
+	var Saved = __webpack_require__(173);
+	var Search = __webpack_require__(174);
+	var Result = __webpack_require__(175);
 
-	ReactDOM.render(
-
-	/*Here we dump all of the components into a single main-container*/
-	/*Again, treat them like they are any other HTML elements.*/
-
-	React.createElement(
+	ReactDOM.render(React.createElement(
 		'div',
 		{ className: 'main-container' },
 		React.createElement(Header, null),
 		React.createElement(Search, null),
+		React.createElement(Result, null),
 		React.createElement(Saved, null)
 	), document.getElementById('app'));
 
@@ -21495,11 +21491,50 @@
 	// Include React 
 	var React = __webpack_require__(1);
 
+	var Saved = React.createClass({
+	  displayName: "Saved",
+
+
+	  render: function render() {
+
+	    return React.createElement(
+	      "div",
+	      { className: "panel panel-default" },
+	      React.createElement(
+	        "div",
+	        { className: "panel-heading" },
+	        React.createElement("i", { className: "fa fa-newspaper-o" }),
+	        " Saved Articles"
+	      ),
+	      React.createElement(
+	        "div",
+	        { className: "panel-body" },
+	        React.createElement(
+	          "label",
+	          null,
+	          "Saved:"
+	        )
+	      )
+	    );
+	  }
+	});
+
+	module.exports = Saved;
+
+/***/ },
+/* 174 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	// Include React 
+	var React = __webpack_require__(1);
+
 	// Create the Results component
 	// Notice how the header uses .createClass
 	// Notice how it uses a render function which specifies what will be displayed by the component
-	var Saved = React.createClass({
-	    displayName: "Saved",
+	var Search = React.createClass({
+	    displayName: "Search",
 
 
 	    render: function render() {
@@ -21510,7 +21545,8 @@
 	            React.createElement(
 	                "div",
 	                { className: "panel-heading" },
-	                "Search Parameters"
+	                React.createElement("i", { className: "fa fa-newspaper-o" }),
+	                " Search Parameters"
 	            ),
 	            React.createElement(
 	                "div",
@@ -21532,8 +21568,27 @@
 	                            React.createElement(
 	                                "div",
 	                                { className: "input-group col-md-12" },
-	                                React.createElement("input", { type: "text", className: "  search-query form-control", placeholder: "Search" })
+	                                React.createElement("input", { type: "text", className: "  search-query form-control", placeholder: "Topic" })
+	                            ),
+	                            React.createElement("br", null),
+	                            React.createElement(
+	                                "div",
+	                                { className: "input-group col-md-12" },
+	                                React.createElement("input", { type: "text", className: "  search-query form-control", placeholder: "Star Year" })
+	                            ),
+	                            React.createElement("br", null),
+	                            React.createElement(
+	                                "div",
+	                                { className: "input-group col-md-12" },
+	                                React.createElement("input", { type: "text", className: "  search-query form-control", placeholder: "End Year" })
 	                            )
+	                        ),
+	                        React.createElement("br", null),
+	                        React.createElement(
+	                            "button",
+	                            { "class": "btn btn-primary", type: "button" },
+	                            React.createElement("i", { "class": "fa fa-search" }),
+	                            " Search"
 	                        )
 	                    )
 	                )
@@ -21543,10 +21598,10 @@
 	});
 
 	// Export the componen back for use in other files
-	module.exports = Saved;
+	module.exports = Search;
 
 /***/ },
-/* 174 */
+/* 175 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -21554,44 +21609,35 @@
 	// Include React 
 	var React = __webpack_require__(1);
 
-	var Search = React.createClass({
-	    displayName: "Search",
+	var Result = React.createClass({
+	  displayName: "Result",
 
 
-	    render: function render() {
+	  render: function render() {
 
-	        return React.createElement(
-	            "div",
-	            { className: "panel panel-default" },
-	            React.createElement(
-	                "div",
-	                { className: "panel-heading" },
-	                React.createElement("i", { className: "fa fa-newspaper-o" }),
-	                " Saved Articles"
-	            ),
-	            React.createElement(
-	                "div",
-	                { className: "panel-body" },
-	                React.createElement(
-	                    "form",
-	                    { role: "form" },
-	                    React.createElement(
-	                        "div",
-	                        { className: "form-group" },
-	                        React.createElement(
-	                            "label",
-	                            null,
-	                            "Saved:"
-	                        ),
-	                        React.createElement("div", { id: "saved" })
-	                    )
-	                )
-	            )
-	        );
-	    }
+	    return React.createElement(
+	      "div",
+	      { className: "panel panel-default" },
+	      React.createElement(
+	        "div",
+	        { className: "panel-heading" },
+	        React.createElement("i", { className: "fa fa-newspaper-o" }),
+	        " Article Results"
+	      ),
+	      React.createElement(
+	        "div",
+	        { className: "panel-body" },
+	        React.createElement(
+	          "label",
+	          null,
+	          "Result:"
+	        )
+	      )
+	    );
+	  }
 	});
 
-	module.exports = Search;
+	module.exports = Result;
 
 /***/ }
 /******/ ]);
