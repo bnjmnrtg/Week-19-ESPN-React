@@ -21567,29 +21567,49 @@
 	                            { id: "custom-search-input" },
 	                            React.createElement(
 	                                "div",
-	                                { className: "input-group col-md-12" },
-	                                React.createElement("input", { type: "text", className: "  search-query form-control", placeholder: "Topic" })
-	                            ),
-	                            React.createElement("br", null),
-	                            React.createElement(
-	                                "div",
-	                                { className: "input-group col-md-12" },
-	                                React.createElement("input", { type: "text", className: "  search-query form-control", placeholder: "Star Year" })
-	                            ),
-	                            React.createElement("br", null),
-	                            React.createElement(
-	                                "div",
-	                                { className: "input-group col-md-12" },
-	                                React.createElement("input", { type: "text", className: "  search-query form-control", placeholder: "End Year" })
+	                                { className: "input-group col-xs-12" },
+	                                React.createElement("input", { type: "text", className: "  search-query form-control", placeholder: "Search" })
 	                            )
 	                        ),
 	                        React.createElement("br", null),
 	                        React.createElement(
-	                            "button",
-	                            { "class": "btn btn-primary", type: "button" },
-	                            React.createElement("i", { "class": "fa fa-search" }),
-	                            " Search"
-	                        )
+	                            "label",
+	                            { "for": "sel1" },
+	                            "Number of Records to Retrieve:"
+	                        ),
+	                        React.createElement(
+	                            "select",
+	                            { className: "form-control", id: "sel1" },
+	                            React.createElement(
+	                                "option",
+	                                null,
+	                                "1"
+	                            ),
+	                            React.createElement(
+	                                "option",
+	                                null,
+	                                "5"
+	                            ),
+	                            React.createElement(
+	                                "option",
+	                                null,
+	                                "10"
+	                            )
+	                        ),
+	                        React.createElement("br", null),
+	                        React.createElement(
+	                            "label",
+	                            { "for": "startYear" },
+	                            "Start Year (Optional):"
+	                        ),
+	                        React.createElement("input", { type: "text", className: "form-control", id: "startYear" }),
+	                        React.createElement("br", null),
+	                        React.createElement(
+	                            "label",
+	                            { "for": "endYear" },
+	                            "End Year (Optional):"
+	                        ),
+	                        React.createElement("input", { type: "text", className: "form-control", id: "endYear" })
 	                    )
 	                )
 	            )
